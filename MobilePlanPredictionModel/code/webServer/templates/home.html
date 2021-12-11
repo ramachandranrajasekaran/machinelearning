@@ -1,0 +1,110 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<html>
+<head>
+<style>
+#form {
+    background-color: #E6E6FB;
+    height: 600px;
+    width: 600px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 0px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 0px;
+    text-align:center;
+}
+label {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    color: #333;
+    height: 20px;
+    width: 200px;
+    margin-top: 10px;
+    margin-left: 10px;
+    text-align: right;
+    margin-right:15px;
+    float:left;
+}
+input {
+    height: 20px;
+    width: 300px;
+    border: 1px solid #000;
+    margin-top: 10px;
+}
+button {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    color: #333;
+    height: 25px;
+    width: 100px;
+    margin-top: 10px;
+    margin-left: 10px;
+    text-align: right;
+    margin-right:15px;
+    text-align:center;
+}
+</style>
+</head>
+</html>
+
+<div class="home">
+    <h1>Plan Suggestion</h1>
+    <h3>This is plan suggestion tool based on existing customers usage details</h3>
+    <h4>Enter the below details to predict your ideal plan</h4>
+
+<div id="form">
+  <form action = "http://localhost:5000/result" method = "POST">
+	
+    <label for="city">City:</label>
+    <input type="text" class="form-control" name="city" placeholder="Enter city" required>
+	
+	<br /><br />
+
+    <label for="age">Age:</label>
+    <input type="text" class="form-control" name="age" placeholder="Enter age" required>
+	<br /><br />
+
+    <label for="calls">Calls:</label>
+    <input type="text" class="form-control" name="calls" placeholder="# of calls per day" required>
+	<br /><br />
+
+    <label for="activecalls">Active Calls:</label>
+    <input type="text" class="form-control" name="activecalls" placeholder="# of active calls in min" required>
+	<br /><br />
+
+    <label for="sms">SMS:</label>
+    <input type="text" class="form-control" name="sms" placeholder="# of SMS per day" required>
+	<br /><br />
+ 
+    <label for="datausage">Data Usage:</label>
+    <input type="text" class="form-control" name="data" placeholder="Data usage per day in MB" required>
+	<br /><br />
+
+    <label for="subscription_a">Youtube Subscription:</label>
+    <input type="checkbox" class="form-control" name="subscription_a">
+	<br /><br />
+
+    <label for="subscription_b">Hotstar Subscription:</label>
+    <input type="checkbox" class="form-control" name="subscription_b">
+	<br /><br />
+
+    <label for="subscription_c">Amazon Prime Subscription:</label>
+    <input type="checkbox" class="form-control" name="subscription_c">
+  
+	<br /><br />
+
+    <label for="subscription_d">Netflix Subscription:</label>
+    <input type="checkbox" class="form-control" name="subscription_d">
+
+	<br /><br />
+ 
+	<button class="btn btn-primary" type="submit" value = "submit">Submit</button>
+
+  
+  </form>
+  </div>
+</div>
+{% endblock %}

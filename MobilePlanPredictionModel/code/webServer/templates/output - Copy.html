@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="home">
+    <h1>Mobile Plans Recommandation Based on Existing Customer Usage</h1>
+    <h3>Below list the recommanded mobile plans based on the user input on number number of plans (clusters)</h3>
+</div>
+
+<html>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 2px solid #dddddd;
+  text-align: left;
+  padding: 10px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+</html>
+
+<div class="home">
+      <table class="table" border = 1>
+         {% for key, value in result.items() %}
+            <tr>
+               
+			   <th style="border: 2px solid #dddddd;"> Plan: {{ key }} </th>
+			   
+			   
+			   <table style="margin-left:100px;width: 85%;" border = 1>
+					<tr>
+					   <th> Region: </th>
+					   <td> {{ value[0] }} </td>
+					</tr>
+					<tr>
+					   <th> Age Range: </th>
+					   <td> {{ value[1] }} </td>
+					</tr>
+					<tr>
+					   <th> Calls: </th>
+					   <td> {{ value[2] }} </td>
+					</tr>
+					<tr>
+					   <th> Active Calls: </th>
+					   <td> {{ value[3] }} </td>
+					</tr>
+					<tr>
+					   <th> SMS Counts: </th>
+					   <td> {{ value[4] }} </td>
+					</tr>
+					<tr>
+					   <th> Data Usage: </th>
+					   <td> {{ value[5] }} </td>
+					</tr>
+					<tr>
+					   <th> Youtube Subscribed: </th>
+					   <td> {{ value[6] }} </td>
+					</tr>
+					<tr>
+					   <th> Hotstar Subscribed: </th>
+					   <td> {{ value[7] }} </td>
+					</tr>
+					<tr>
+					   <th> Amazon Prime Subscribed: </th>
+					   <td> {{ value[8] }} </td>
+					</tr>
+					<tr>
+					   <th> Netflix Subscribed: </th>
+					   <td> {{ value[9] }} </td>
+					</tr>
+					<tr style="background-color: #ffffff00;" class="blank_row">
+						<td colspan="3"></td>
+					</tr>
+					<tr style="background-color: #ffffff00;" class="blank_row">
+						<td colspan="3"></td>
+					</tr>
+			  </table>
+            </tr>
+         {% endfor %}
+      </table>
+	  <a href="http://localhost:5000/about">Back</a>
+</div>
+
+{% endblock %}

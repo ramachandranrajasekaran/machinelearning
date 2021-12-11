@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="about">
+    <h1>Plan Creation</h1>
+    <h3>This is plan creation tool based on existing customers usage details</h3>
+    <h4>Follow the below steps</h4>
+	<p>1. Choose the file (containing customer usage details) to analyse</p>
+	<p>2. In Clusters text box, enter the number for expected plans to be created</p>
+	<p>3. Click on Submit button</p>
+	
+	<form action = "http://localhost:5000/uploader" method = "POST" 
+         enctype = "multipart/form-data">
+         <input type = "file" name = "file" />
+		 <br />
+		 <div class="home">
+			<label for="n_clusters">Clusters:</label>
+			<input type="text" class="form-control" name="n_clusters" placeholder="# of clusters" required>
+		</div>
+         <input type = "submit"/>
+    </form>
+</div>
+{% endblock %}
